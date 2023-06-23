@@ -3,8 +3,6 @@
 
 const blockChannel = async (videoId) => {
 
-    console.log(videoId)
-
     const response2 = await fetch('https://witorz.com/api/return_channel', {
         method: 'POST',
         headers: {
@@ -18,7 +16,7 @@ const blockChannel = async (videoId) => {
     const data2 = await response2.text()
 
     if (data2 == 1) {
-        window.location.assign(
+        window.location.replace(
             "https://www.investopedia.com/"
         )
     }

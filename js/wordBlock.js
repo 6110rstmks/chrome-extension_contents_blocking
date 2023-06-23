@@ -4,11 +4,21 @@ let siteTitle = document.title
     // let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd .rkqHyd")
 let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd")
 
+let embeddedYoutubeElement2 = document.querySelectorAll(".sI5x9c")
+
 const googleYoutubeBlock = () => {
 
     embeddedYoutubeElement.forEach(test => {
         test.addEventListener("click", () => {
-            window.location.assign(
+            window.location.replace(
+                "https://www.investopedia.com/"
+            )
+        })
+    })
+    
+    embeddedYoutubeElement2.forEach(test => {
+        test.addEventListener("click", () => {
+            window.location.replace(
                 "https://www.investopedia.com/"
             )
         })
@@ -32,7 +42,7 @@ const blockWord = async () => {
     console.log(data2)
 
     if (data2 == 1) {
-        window.location.assign(
+        window.location.replace(
             "https://www.investopedia.com/"
         )
         return;
