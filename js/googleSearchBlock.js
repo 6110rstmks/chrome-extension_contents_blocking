@@ -53,9 +53,5 @@ const clickSiteTitleCheck = () => {
     })
 }
 
-console.log(siteTitleElements)
-
 clickSiteTitleCheck()
-
-
 googleYoutubeBlock()

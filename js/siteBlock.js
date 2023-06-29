@@ -1,14 +1,16 @@
-let siteTitle = document.title
+let url = window.location.href
 
-const blockWord = async () => {
+url = url.replace(/^https?:\/\//, '')
 
-    const response2 = await fetch('https://witorz.com/api/return_word', {
+const blockSite = async () => {
+
+    const response2 = await fetch('https://witorz.com/api/return_site', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: siteTitle,
+            title: url,
         })
     })
     
@@ -23,5 +25,4 @@ const blockWord = async () => {
     }
 }
 
-blockWord()
-
+blockSite()
