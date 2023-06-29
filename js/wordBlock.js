@@ -2,28 +2,28 @@ let siteTitle = document.title
 
     // googleの検索結果一覧の中にある埋め込みyoutube element
     // let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd .rkqHyd")
-let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd")
+// let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd")
 
-let embeddedYoutubeElement2 = document.querySelectorAll(".sI5x9c")
+// let embeddedYoutubeElement2 = document.querySelectorAll(".sI5x9c")
 
-const googleYoutubeBlock = () => {
+// const googleYoutubeBlock = () => {
 
-    embeddedYoutubeElement.forEach(test => {
-        test.addEventListener("click", () => {
-            window.location.replace(
-                "https://www.investopedia.com/"
-            )
-        })
-    })
+//     embeddedYoutubeElement.forEach(test => {
+//         test.addEventListener("click", () => {
+//             window.location.replace(
+//                 "https://www.investopedia.com/"
+//             )
+//         })
+//     })
     
-    embeddedYoutubeElement2.forEach(test => {
-        test.addEventListener("click", () => {
-            window.location.replace(
-                "https://www.investopedia.com/"
-            )
-        })
-    })
-}
+//     embeddedYoutubeElement2.forEach(test => {
+//         test.addEventListener("click", () => {
+//             window.location.replace(
+//                 "https://www.investopedia.com/"
+//             )
+//         })
+//     })
+// }
 
 
 const blockWord = async () => {
@@ -49,6 +49,6 @@ const blockWord = async () => {
     }
 }
 
-googleYoutubeBlock()
+// googleYoutubeBlock()
 blockWord()
 

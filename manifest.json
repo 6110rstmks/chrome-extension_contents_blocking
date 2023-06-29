@@ -16,6 +16,12 @@
           ]
         },
         {
+            "matches": ["*://*.google.com/*"],
+            "js": [
+            "js/googleSearchBlock.js"
+          ]
+        },
+        {
           "matches": ["http://*/*", "https://*/*"],
           "js": [
             "js/wordBlock.js"
