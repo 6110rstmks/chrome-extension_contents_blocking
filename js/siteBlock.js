@@ -19,7 +19,7 @@ const blockSite = async () => {
 
     if (data2 == 1) {
         window.location.replace(
-            "https://www.investopedia.com/"
+            "https://www.forbes.com/"
         )
         return;
     }

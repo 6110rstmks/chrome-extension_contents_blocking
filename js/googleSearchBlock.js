@@ -19,7 +19,7 @@ const googleYoutubeBlock = () => {
     embeddedYoutubeElements2.forEach(youtubeElement => {
         youtubeElement.addEventListener("click", () => {
             window.location.replace(
-                "https://www.investopedia.com/"
+                "https://www.news.google.com/"
             )
         })
     })
@@ -45,7 +45,7 @@ const clickSiteTitleCheck = () => {
         
             if (data2 == 1) {
                 window.location.replace(
-                    "https://www.investopedia.com/"
+                    "https://www.news.google.com/"
                 )
                 return;
             }

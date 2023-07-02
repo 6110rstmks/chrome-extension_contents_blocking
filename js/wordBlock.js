@@ -2,6 +2,8 @@ let siteTitle = document.title
 
 const blockWord = async () => {
 
+    console.log(siteTitle)
+
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {
