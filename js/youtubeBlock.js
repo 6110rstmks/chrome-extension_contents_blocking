@@ -25,7 +25,7 @@ const blockChannel = async (videoId) => {
     }
 
 }
-const blockWord = async () => {
+const blockWord2 = async () => {
 
     let siteTitle = document.title
 
@@ -57,7 +57,7 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
 
     blockChannel(videoId)
 
-    blockWord()
+    blockWord2()
 
 })
 

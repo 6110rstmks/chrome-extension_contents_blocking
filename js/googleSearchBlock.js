@@ -11,7 +11,7 @@ const googleYoutubeBlock = () => {
     embeddedYoutubeElements.forEach(youtubeElement => {
         youtubeElement.addEventListener("click", () => {
             window.location.replace(
-                "https://www.investopedia.com/"
+                "https://www.google.com/"
             )
         })
     })
