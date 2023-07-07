@@ -2,8 +2,6 @@ let siteTitle = document.title
 
 const blockWord = async () => {
 
-    console.log(siteTitle)
-
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {
@@ -15,9 +13,7 @@ const blockWord = async () => {
     })
     
     const data2 = await response2.text()
-    console.log(data2)
-
-    if (data2 == 1) {
+    if (data2 != 0) {
         window.location.replace(
             "https://www.investopedia.com/"
         )

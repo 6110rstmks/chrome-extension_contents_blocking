@@ -2,6 +2,8 @@ let url = window.location.href
 
 url = url.replace(/^https?:\/\//, '')
 
+console.log(url)
+
 const blockSite = async () => {
 
     const response2 = await fetch('https://witorz.com/api/return_site', {

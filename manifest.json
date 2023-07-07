@@ -24,7 +24,8 @@
         {
           "matches": ["http://*/*", "https://*/*"],
           "js": [
-            "js/wordBlock.js"
+            "js/wordBlock.js",
+            "js/siteBlock.js"
           ]
         }
     ],
