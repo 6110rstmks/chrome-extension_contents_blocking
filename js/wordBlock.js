@@ -14,9 +14,9 @@ const blockWord = async () => {
     
     const data2 = await response2.text()
     if (data2 != 0) {
-        window.location.replace(
-            "https://www.investopedia.com/"
-        )
+        window.location.replace("https://www.investopedia.com/")
+        alert(data2)
+
         return;
     }
 }

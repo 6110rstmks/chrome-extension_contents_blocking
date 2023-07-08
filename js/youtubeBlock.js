@@ -1,5 +1,5 @@
 // send videoID to aws server.
-// the server program do main process, and minimize processes that occurred in browser. 
+// the server program do main process, and minimize processes that occurred in browser. ]
 
 const blockChannel = async (videoId) => {
     let siteTitle = document.title
@@ -48,6 +48,7 @@ const blockWord2 = async () => {
         window.location.replace(
             "https://www.insider.com/"
         )
+        alert(data2)
         return;
     }
 }

@@ -4,6 +4,7 @@ let embeddedYoutubeElements2 = document.querySelectorAll(".sI5x9c")
 
 let siteTitleElements = document.querySelectorAll(".LC20lb, .MBeuO, .DKV0Md")
 
+
     // googleの検索結果一覧の中にある埋め込みyoutube element
     // let embeddedYoutubeElement = document.querySelectorAll(".kSFuOd .rkqHyd")
 const googleYoutubeBlock = () => {
