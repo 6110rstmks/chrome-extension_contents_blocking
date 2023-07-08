@@ -44,7 +44,7 @@ const blockWord2 = async () => {
     const data2 = await response2.text()
     console.log(data2)
 
-    if (data2 == 1) {
+    if (data2 != 0) {
         window.location.replace(
             "https://www.insider.com/"
         )
