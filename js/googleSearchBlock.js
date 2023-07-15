@@ -44,10 +44,11 @@ const clickSiteTitleCheck = () => {
             
             const data2 = await response2.text()
         
-            if (data2 == 1) {
+            if (data2 != 0) {
                 window.location.replace(
                     "https://www.news.google.com/"
                 )
+                alert(data2)
                 return;
             }
         })
