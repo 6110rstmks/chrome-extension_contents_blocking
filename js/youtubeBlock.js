@@ -42,7 +42,6 @@ const blockWord2 = async () => {
     })
     
     const data2 = await response2.text()
-    console.log(data2)
 
     if (data2 != 0) {
         window.location.replace(
@@ -54,9 +53,12 @@ const blockWord2 = async () => {
 }
 
 chrome.runtime.onMessage.addListener((obj, sender, response) => {
-    const { videoId } = obj;
+    const { type, videoId } = obj;
+    console.log(type)
+    if (type === "video") {
+        blockChannel(videoId)
+    }
 
-    blockChannel(videoId)
 
     blockWord2()
 
