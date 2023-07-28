@@ -47,7 +47,6 @@ const blockSearch = async (searchWord) => {
 
 chrome.runtime.onMessage.addListener((obj, sender, response) => {
     const { type, videoId } = obj;
-    console.log(type)
     if (type === "video") {
         blockYoutube(videoId)
     } else if (type === "search") {
@@ -58,6 +57,12 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
         )
     }
 
+    // 関連動画非表示
+    const element = document.querySelector('.style-scope.ytd-watch-next-secondary-results-renderer#items');
+    element.remove()
+
+
+    
 })
 
 
