@@ -52,6 +52,10 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
         blockYoutube(videoId)
     } else if (type === "search") {
         blockSearch(videoId)
+    } else if (type === "short") {
+        window.location.replace(
+            "https://www.insider.com/"
+        )
     }
 
 })

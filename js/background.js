@@ -8,6 +8,15 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
         });
     }
 
+    if (tab.url && tab.url.includes("youtube.com/short")) {
+        chrome.tabs.sendMessage(tabId, {
+            type: "short",
+            videoId: null,
+        });
+    }
+
+
+
     if (tab.url && tab.url.includes("youtube.com/result")) {
         const queryParameters = tab.url.split("?")[1]
         const urlParameters = new URLSearchParams(queryParameters);
