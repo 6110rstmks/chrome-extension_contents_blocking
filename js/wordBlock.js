@@ -1,7 +1,6 @@
 let siteTitle = document.title
 
 const blockWord = async () => {
-
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {
@@ -16,7 +15,6 @@ const blockWord = async () => {
     if (data2 != 0) {
         window.location.replace("https://www.investopedia.com/")
         alert(data2)
-
         return;
     }
 }

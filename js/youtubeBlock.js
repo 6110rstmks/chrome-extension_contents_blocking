@@ -23,7 +23,6 @@ const blockYoutube = async (videoId) => {
 
 }
 const blockSearch = async (searchWord) => {
-
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {
@@ -33,9 +32,7 @@ const blockSearch = async (searchWord) => {
             title: searchWord,
         })
     })
-    
     const data2 = await response2.text()
-
     if (data2 != 0) {
         window.location.replace(
             "https://www.insider.com/"
@@ -45,12 +42,25 @@ const blockSearch = async (searchWord) => {
     }
 }
 
+//ブラックリストに登録しているチャンネルを9秒間hoverするとリダイレクトさせる。
+const videoOverRedirect = async (videoId) => {
+    let timeout = null
+    const youtubeVideos = document.querySelector('.style-scope.ytd-item-section-renderer#contents');
+    Array.from(youtubeVideos.children).forEach(youtubeVideo => {
+        console.log(youtubeVideo)
+        youtubeVideo.addEventListener('mouseover', () => {
+
+        })
+    })
+}
+
 chrome.runtime.onMessage.addListener((obj, sender, response) => {
     const { type, videoId } = obj;
     if (type === "video") {
         blockYoutube(videoId)
     } else if (type === "search") {
         blockSearch(videoId)
+        videoOverRedirect(videoId)
     } else if (type === "short") {
         window.location.replace(
             "https://www.insider.com/"
@@ -60,8 +70,6 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
     // 関連動画非表示
     const element = document.querySelector('.style-scope.ytd-watch-next-secondary-results-renderer#items');
     element.remove()
-
-
     
 })
 

@@ -2,7 +2,7 @@ let url = window.location.href
 
 url = url.replace(/^https?:\/\//, '')
 
-console.log(url)
+// console.log(url)
 
 const blockSite = async () => {
 
@@ -17,7 +17,7 @@ const blockSite = async () => {
     })
     
     const data2 = await response2.text()
-    console.log(data2)
+    // console.log(data2)
 
     if (data2 == 1) {
         window.location.replace(
