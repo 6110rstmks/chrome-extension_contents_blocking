@@ -15,14 +15,19 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
         });
     }
 
-
-
     if (tab.url && tab.url.includes("youtube.com/result")) {
         const queryParameters = tab.url.split("?")[1]
         const urlParameters = new URLSearchParams(queryParameters);
         chrome.tabs.sendMessage(tabId, {
             type: "search",
             videoId: urlParameters.get("search_query"),
+        });
+    }
+
+    if (tab.url && tab.url.includes("twitter.com")) {
+        chrome.tabs.sendMessage(tabId, {
+            type: "twitter",
+            videoId: null,
         });
     }
 

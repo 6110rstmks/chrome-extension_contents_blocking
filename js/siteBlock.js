@@ -1,8 +1,6 @@
-let url = window.location.href
-
-url = url.replace(/^https?:\/\//, '')
-
-console.log(url)
+let originalUrl = window.location.href
+var domain = new URL(originalUrl).hostname;
+domain = domain.replace("www.", "");
 
 const blockSite = async () => {
 
@@ -12,14 +10,13 @@ const blockSite = async () => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            title: url,
+            title: domain,
         })
-    })
-    
+    })    
     const data2 = await response2.text()
     console.log(data2)
 
-    if (data2 == 1) {
+    if (data2 != 0) {
         window.location.replace(
             "https://www.forbes.com/"
         )

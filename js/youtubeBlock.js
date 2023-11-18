@@ -55,6 +55,11 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
         window.location.replace(
             "https://www.insider.com/"
         )
+    } else if (type === "twitter") {
+        console.log("ほや")
+        window.location.replace(
+            "https://www.insider.com/"
+        )
     }
 
     // 関連動画非表示
