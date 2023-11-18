@@ -14,8 +14,8 @@ const blockSite = async () => {
         })
     })    
     const data2 = await response2.text()
-
-    if (data2 === 1) {
+    console.log(data2)
+    if (data2 === "1") {
         window.location.replace(
             "https://www.forbes.com/"
         )
