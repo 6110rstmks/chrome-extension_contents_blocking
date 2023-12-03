@@ -56,7 +56,6 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
             "https://www.insider.com/"
         )
     } else if (type === "twitter") {
-        console.log("ほや")
         window.location.replace(
             "https://www.insider.com/"
         )
