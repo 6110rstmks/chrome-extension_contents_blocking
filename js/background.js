@@ -3,7 +3,7 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
         const queryParameters = tab.url.split("?")[1]
         const urlParameters = new URLSearchParams(queryParameters);
         chrome.tabs.sendMessage(tabId, {
-            type: "video",
+            type: "watch",
             videoId: urlParameters.get("v"),
         });
     }
@@ -11,6 +11,13 @@ chrome.tabs.onUpdated.addListener((tabId, tab) => {
     if (tab.url && tab.url.includes("youtube.com/short")) {
         chrome.tabs.sendMessage(tabId, {
             type: "short",
+            videoId: null,
+        });
+    }
+
+    if (tab.url && tab.url.includes("youtube.com/watch")) {
+        chrome.tabs.sendMessage(tabId, {
+            type: "watch",
             videoId: null,
         });
     }

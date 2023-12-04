@@ -11,9 +11,7 @@ const blockYoutube = async (videoId) => {
             videoid: videoId,
         })
     })
-
     const data2 = await response2.text()
-
     if (data2 != 0) {
         window.location.replace(
             "https://www.techopedia.com/"
@@ -23,7 +21,6 @@ const blockYoutube = async (videoId) => {
 
 }
 const blockSearch = async (searchWord) => {
-
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {
@@ -33,9 +30,7 @@ const blockSearch = async (searchWord) => {
             title: searchWord,
         })
     })
-    
     const data2 = await response2.text()
-
     if (data2 != 0) {
         window.location.replace(
             "https://www.insider.com/"
@@ -47,8 +42,11 @@ const blockSearch = async (searchWord) => {
 
 chrome.runtime.onMessage.addListener((obj, sender, response) => {
     const { type, videoId } = obj;
-    if (type === "video") {
+    if (type === "watch") {
         blockYoutube(videoId)
+        // 関連動画非表示
+        const element = document.querySelector('.style-scope.ytd-watch-next-secondary-results-renderer#items');
+        element.remove()
     } else if (type === "search") {
         blockSearch(videoId)
     } else if (type === "short") {
@@ -60,15 +58,15 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
             "https://www.insider.com/"
         )
     }
-
-    // 関連動画非表示
-    const element = document.querySelector('.style-scope.ytd-watch-next-secondary-results-renderer#items');
-    element.remove()
-
-
-    
 })
 
+// youtube.com(page pathがない）で表示される動画を非表示
+// 220が小さくできる限界
+setTimeout(function() {
+    const rr = document.querySelector('.style-scope.ytd-rich-grid-renderer#contents');
+    console.log(rr)
+    rr.remove()
+  }, 220);
 
 // -------------------------------------------------------------
 
