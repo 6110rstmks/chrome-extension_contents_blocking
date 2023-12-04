@@ -61,7 +61,7 @@ chrome.runtime.onMessage.addListener((obj, sender, response) => {
 })
 
 // youtube.com(page pathがない）で表示される動画を非表示
-// 250が小さくできる限界
+// 500が小さくできる限界
 setTimeout(function() {
     const rr = document.querySelector('.style-scope.ytd-rich-grid-renderer#contents');
     console.log(rr)
