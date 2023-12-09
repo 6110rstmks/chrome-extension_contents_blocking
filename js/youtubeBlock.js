@@ -66,7 +66,7 @@ setTimeout(function() {
     const rr = document.querySelector('.style-scope.ytd-rich-grid-renderer#contents');
     console.log(rr)
     rr.remove()
-  }, 500);
+  }, 900);
 
 // -------------------------------------------------------------
 
