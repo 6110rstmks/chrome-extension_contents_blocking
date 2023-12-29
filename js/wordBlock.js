@@ -1,6 +1,12 @@
+import {main} from "./returnURL"
 let siteTitle = document.title
 
+main()
+
 const blockWord = async () => {
+
+    // const response2 = await fetch(`https://{contentMain}/api/return_word`, {
+
     const response2 = await fetch('https://witorz.com/api/return_word', {
         method: 'POST',
         headers: {

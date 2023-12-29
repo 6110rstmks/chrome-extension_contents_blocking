@@ -10,6 +10,12 @@
       },
     "content_scripts": [
         {
+          "matches": [ "<all_urls>" ],
+          "js": [
+              "js/loader.js"
+          ]
+        },
+        {
             "matches": ["*://*.youtube.com/*"],
             "js": [
             "js/youtubeBlock.js"
@@ -32,5 +38,15 @@
     "action":{
         "default_popup": "index.html",
         "default_title": "Latest Covid Report"
-    }
+    },
+    "web_accessible_resources": [
+      {
+          "resources": [
+              "js/returnURL.js",
+              "js/wordBlock.js",
+              "js/loader.js"
+          ],
+          "matches": ["<all_urls>"]
+      }
+    ]
   }

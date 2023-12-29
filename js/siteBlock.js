@@ -1,3 +1,10 @@
+// chrome-extensionでmoduleを読み込む際には以下のようにする必要がある。
+(async () => {
+    const src = chrome.runtime.getURL("./returnURL.js");
+    const contentMain = await import(src);
+    contentMain.main();
+  })();
+
 let originalUrl = window.location.href
 var domain = new URL(originalUrl).hostname;
 domain = domain.replace("www.", "");

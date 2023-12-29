@@ -1,5 +1,11 @@
-// send videoID to aws server.
-// the server program do main process, and minimize processes that occurred in browser. ]
+// chrome-extensionでmoduleを読み込む際には以下のようにする必要がある。
+(async () => {
+    const src = chrome.runtime.getURL("./returnURL.js");
+    const contentMain = await import(src);
+    contentMain.main();
+  })();
+
+import { apiURL } from "./returnURL";
 
 const blockYoutube = async (videoId) => {
     const response2 = await fetch('https://witorz.com/api/return_youtube', {
@@ -17,6 +23,7 @@ const blockYoutube = async (videoId) => {
             "https://www.techopedia.com/"
         )
         alert(data2)
+        return
     }
 
 }
